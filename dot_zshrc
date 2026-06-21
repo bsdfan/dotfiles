@@ -1,0 +1,13 @@
+autoload -Uz compinit
+compinit
+
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
+
+zstyle ':completion:*' menu select
+
+PROMPT='%n@%m:%~ %# '
