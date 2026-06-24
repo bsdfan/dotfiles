@@ -1,0 +1,13 @@
+[user]
+	email = bsdfan@users.noreply.github.com
+	name = bsdfan
+
+[init]
+	defaultBranch = trunk
+
+[credential]
+	helper = /usr/local/bin/git-credential-manager
+	credentialStore = plaintext
+
+[credential "https://dev.azure.com"]
+	useHttpPath = true
