@@ -1,13 +1,22 @@
+# enable completion
 autoload -Uz compinit
 compinit
 
+# bash like completion and disable menu
+setopt bash_autolist
+unsetopt menu_complete auto_menu
+
+# disable beep on completion list
+unsetopt list_beep
+
+# history settings
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 
-setopt HIST_IGNORE_DUPS
-setopt SHARE_HISTORY
+# ignore duplicate commands and share history across terminals
+setopt hist_ignore_dups
+setopt share_history
 
-zstyle ':completion:*' menu select
-
+# prompt settings
 PROMPT='%n@%m:%~ %# '
