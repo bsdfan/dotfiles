@@ -1,0 +1,17 @@
+{ config, pkgs, ... }:
+
+{
+  home.username = "{{ .chezmoi.username }}";
+  home.homeDirectory = "{{  .chezmoi.homeDir }}";
+
+  home.stateVersion = "26.05";
+
+  home.packages = with pkgs; [
+    ripgrep
+
+    neovim-unwrapped
+    (python3.withPackages (ps: [ ps.pynvim ]))
+  ];
+
+  programs.home-manager.enable = true;
+}
